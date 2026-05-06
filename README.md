@@ -1,69 +1,75 @@
-# Rele20 app
+# Controle remoto com MQTT e Flet
 
-## Run the app
+## Descrição
 
-### uv
+O **myRelay Control** é um sistema de automação que integra software e hardware para controle remoto de dispositivos de alta potência, como lâmpadas, ventiladores e outros equipamentos elétricos.
 
-Run as a desktop app:
+A aplicação utiliza uma interface moderna construída com **Flet**, conectando-se a um dispositivo embarcado via protocolo **MQTT**. Isso permite enviar comandos em tempo real para um relé mecânico, oferecendo uma solução simples e eficiente para automação residencial ou prototipagem IoT.
 
-```bash
-uv run flet run
-```
+Um dos grandes diferenciais do projeto é a facilidade de distribuição: com o Flet, é possível gerar rapidamente aplicações para **Android (APK)**, além de versões para **Linux** e **Windows**, tornando o sistema altamente portátil.
 
-Run as a web app:
+---
 
-```bash
-uv run flet run --web
-```
+## Tecnologias Utilizadas
 
-For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/).
+- **Flet** → Interface gráfica moderna e multiplataforma  
+- **Paho-MQTT** → Comunicação com o broker MQTT  
+- **HiveMQ (broker público)** → Utilizado para prototipagem  
+- **Python** → Linguagem principal do projeto  
+- **Git** → Versionamento de código  
+- **Virtual Environment** → Isolamento de dependências  
 
-## Build the app
+---
 
-### Android
+## Arquitetura e Boas Práticas
 
-```bash
-flet build apk -v
-```
+O projeto foi desenvolvido seguindo princípios importantes de engenharia de software:
 
-For more details on building and signing `.apk` or `.aab`, refer to the [Android Packaging Guide](https://flet.dev/docs/publish/android/).
+- 🔹 **Separação de responsabilidades**
+  - Camada de interface (Flet)
+  - Camada de comunicação (MQTT)
+  - Camada intermediária (Controller)
 
-### iOS
+- 🔹 **Baixo acoplamento entre módulos**
+- 🔹 **Organização para escalabilidade futura**
+- 🔹 **Uso de ambiente virtual** para controle de dependências
+- 🔹 **Versionamento com Git**, facilitando manutenção e colaboração
 
-```bash
-flet build ipa -v
-```
+---
 
-For more details on building and signing `.ipa`, refer to the [iOS Packaging Guide](https://flet.dev/docs/publish/ios/).
+## Funcionalidades
 
-### macOS
+- Conexão com broker MQTT (HiveMQ)
+- Exibição do status de conexão na interface
+- Controle de relé (Ligado / Desligado)
+- Comunicação em tempo real com dispositivo embarcado
 
-```bash
-flet build macos -v
-```
+---
 
-For more details on building macOS package, refer to the [macOS Packaging Guide](https://flet.dev/docs/publish/macos/).
+## Autenticação e Segurança
 
-### Linux
+- Estrutura preparada para suporte a autenticação no broker MQTT  
+- Possibilidade de expansão para conexões seguras (TLS/SSL)
 
-```bash
-flet build linux -v
-```
+---
 
-For more details on building Linux package, refer to the [Linux Packaging Guide](https://flet.dev/docs/publish/linux/).
+## Possibilidades de Expansão
 
-### Windows
+O sistema foi pensado para crescer. Algumas evoluções possíveis:
 
-```bash
-flet build windows -v
-```
+- Controle de múltiplos dispositivos simultaneamente  
+- Dashboard com status em tempo real  
+- Integração com sensores IoT  
+- Persistência de estado dos dispositivos  
+- Automações programadas (timers e rotinas)  
 
-For more details on building Windows package, refer to the [Windows Packaging Guide](https://flet.dev/docs/publish/windows/).
+---
 
-### Web
+## Aplicações
 
-```bash
-flet build web -v
-```
+- Automação residencial simples  
+- Protótipos de IoT  
+- Controle remoto de dispositivos elétricos  
+- Estudos sobre integração software + hardware  
 
-For more details on building Web app, refer to the [Web Packaging Guide](https://flet.dev/docs/publish/web/).
+---
