@@ -1,0 +1,31 @@
+[project]
+name = "myRelay"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Raylan Carvalho", email = "raylan.bruno@discente.ufma.br" }
+]
+dependencies = [
+    "flet>=0.84.0",
+    "paho-mqtt>=2.1.0",
+    "dotenv>=0.9.9",
+]
+
+[dependency-groups]
+dev = [
+    "flet-cli>=0.84.0",
+    "flet-desktop>=0.84.0",
+    "flet-web>=0.84.0",
+]
+
+[tool.flet]
+desktop_flavor = "light"    # Change to "full" to use flet-audio and flet-video
+org = "com.mycompany"
+product = "myRelay"
+company = "Flet"
+copyright = "Copyright (C) 2023-2026 by Raylan"
+
+[tool.flet.app]
+path = "src"
